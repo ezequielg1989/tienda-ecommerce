@@ -4,6 +4,10 @@ import NavBar from './component/NavBar/NavBar';
 import {Routes,Route} from 'react-router-dom'
 import Products from './component/Products/Products';
 import Product from './component/Product/Product';
+import About from './component/About/About';
+import Cart  from './component/Cart/Cart';
+import Checkout from './component/Checkout';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
@@ -13,9 +17,10 @@ function App() {
         <Route exact path="/" element={<Home/>}/>
         <Route exact path="/Products" element={<Products/>}/>
         <Route exact path="/Product/:id" element={<Product/>}/>
-
-      </Routes>
-      
+        <Route exact path="Cart" element={<Cart/>}/>
+        <Route exact path="Checkout" element={<Checkout/>}/>
+        <Route exact path="/About" element={<About/>}/>
+      </Routes>  
     </div>
   );
 }

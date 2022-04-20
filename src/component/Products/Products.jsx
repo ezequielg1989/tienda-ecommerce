@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import "./Products.css"
+import './Products.css'
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton"
 import { Link } from 'react-router-dom';
 
@@ -8,9 +8,8 @@ const Products = () => {
     const [data, setData] = useState([]);
     const [filter, setFilter] = useState(data);
     const [loading, setLoading] = useState(false);
-    let componentMounted = true;
+    const [componentMounted, setComponentMounted] = useState(false)
 
-    
      
     useEffect(() => {
         const getProducts = async () => {
@@ -20,15 +19,13 @@ const Products = () => {
                 setData(await response.clone().json());
                 setFilter(await response.json());
                 setLoading(false);
-                console.log(response);
+                
             }
-            return () => {
-                componentMounted = false;
-            }
+            
+            setComponentMounted(true)
         }
         getProducts();
-
-    }, []);
+    }, [componentMounted]);
     const Loading = () => {
         return (
             <div>
@@ -53,14 +50,11 @@ const Products = () => {
     }
 
     const filterProduct = (category) => {
-        console.log("hola");
-        console.log(data);
-        console.log("hola");
         const filt = data.filter((item) => item.category === category);
-        console.log(filt);
         setFilter(filt);
         
     }
+
 
     const ShowProducts = () => {
         return (
@@ -72,27 +66,31 @@ const Products = () => {
                     <button className="btn btn-outline-dark me-2" onClick={()=>filterProduct("jewelery")}>Jewelery Clothings</button>
                     <button className="btn btn-outline-dark me-2" onClick={()=>filterProduct("electronics")}>Electronics</button>
                 </div>
+                <div className='cardd-total'>
                 {filter.map((product) => {
                     return (
-                        <div>
-                            <div className="col-md-3">
-                                <div className="card h-100 text-center p-4" key={product.id}>
-                                    <img src={product.image} className="card-img-hrefp" alt={product.title} height="250px" />
-                                    <div className="card-body">
+                        <div className='card' key={product.id}>
+                            <div className="card-ind" >
+                                
+                                    <img src={product.image} className="" alt={product.title} />
+                                    <div >
                                         <h5 className="card-title mb-0">{product.title.substring(0,12)}</h5>
                                         <p className="card-text fw-bolder">{product.price}</p>
-                                        <Link to={`/product/${product.id}`} className="btn btn-outline-dark">ADD href cart</Link>
+                                        <Link to={`/product/${product.id}`} className="btn btn-outline-dark">Detalle del producto</Link>
                                     </div>
-                                </div>
+                            
                             </div>
 
                         </div>
 
                     )
                 })}
+                </div>
+                
             </>
         );
     };
+    
     return (
         <div>
             <div className="container my-5 py-5">

@@ -1,0 +1,19 @@
+.col1 {
+    padding: 30px;
+}
+ .col2 {
+    padding: 30px;
+ }
+ .cont {
+   display: flex;
+   justify-content: space-between;
+   width: 100%;
+ }
+
+ .col1 img{
+     transition: all 0.3s ease;
+ }
+
+ .col1 img:hover{
+     transform: scale(1.1);
+ }
