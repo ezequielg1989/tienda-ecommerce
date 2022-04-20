@@ -1,5 +1,5 @@
 
-
+//action para pasar sumar y eliminar item con su payload
 export const addCart = (product) => {
     return {
         type:"ADDITEM",

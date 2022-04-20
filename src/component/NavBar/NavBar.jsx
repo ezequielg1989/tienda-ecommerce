@@ -36,28 +36,12 @@ const NavBar = () => {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/About">
-                  About
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="Contact">
-                  Contact
-                </Link>
-              </li>
-              <li className="nav-item">
                 <Link className="nav-link" to="/Cart">
-                  Casa
+                  Carrito
                 </Link>
               </li>
             </ul>
             <div className="buttons">
-              <Link to="login" className="btn btn-outline-dark ms-2">
-                <i className="fa fa-sign-in me-2 "></i>Login
-              </Link>
-              <Link to="register" className="btn btn-outline-dark ms-2">
-                <i className="fa fa-sign-in me-2"></i>Register
-              </Link>
               <Link to="Cart" className="btn btn-outline-dark ms-2">
                 <i className="fa fa-sign-in me-2 "></i>Cart({state.length})
               </Link>
