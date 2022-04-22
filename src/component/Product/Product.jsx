@@ -42,8 +42,8 @@ const Product = () => {
             <div className="container">
                 <div className="">
                     <div key={product.id} className="cont row">
-                        <div className="col1 col-12 col-lg-6">
-                            <img src={product.image} alt={product.title} height="400px" width={400}/>
+                        <div className="col1  col-12 col-lg-6">
+                            <img src={product.image} alt={product.title} height="300px" width={300} className="justify-content-center m-3"/>
                         </div>
                         <div className="col2 col-lg-6">
                             <h4 className="text-uppercase text-black-50">
@@ -60,7 +60,7 @@ const Product = () => {
                             <p>
                                 {product.description}
                             </p>
-                            <Link to="" className="btn btn-outline-dark px-4 m-3" onClick={()=> addProduct(product)}>
+                            <Link to="" className="btn btn-outline-dark px-4 m-2" onClick={()=> addProduct(product)}>
                                 Sumar al carrito
                             </Link>
                             <Link to="/cart" className="btn btn-dark ms-2 px-3 m-3">
