@@ -37,7 +37,7 @@ const NavBar = () => {
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/Cart">
-                  Carrito
+                  Cart
                 </Link>
               </li>
             </ul>
